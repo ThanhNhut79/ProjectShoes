@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
-
-  return (
-  <></>
-  )
+  return <Footer />;
 }
 
-export default App
+export default App;
