@@ -1,0 +1,65 @@
+.tophead {
+  height: 70px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.container {
+  height: 100%;
+}
+.container .row {
+  height: 100%;
+}
+.content-header {
+  width: 100%;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: row-reverse;
+  .phone-header {
+    padding: 0 20px;
+    border-left: 1px solid #ebebeb;
+  }
+  .search-box-pc {
+    padding: 0 20px;
+    border-left: 1px solid #ebebeb;
+  }
+  .account_header {
+    padding: 0 20px;
+    border-left: 1px solid #ebebeb;
+  }
+  .cartgroup {
+    padding: 0 20px;
+    border-left: 1px solid #ebebeb;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.d_flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d_flex_center i {
+  margin-right: 10px;
+  color: #35c0c5;
+}
+.d_flex_center button {
+  color: #35c0c5;
+}
+.d_flex_center input {
+  border: 0px;
+}
+
+.login_header {
+  padding: 0 20px;
+  border-left: 1px solid #ebebeb;
+}
+.register_header {
+  padding: 0 20px;
+  border-left: 1px solid #ebebeb;
+}
