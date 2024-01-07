@@ -4,13 +4,16 @@ import Home from "./Pages/Home/Home";
 import Introduce from "./Pages/Introduce/Introduce";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import Layout from "./Layout/Index";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/introduce" element={<Introduce />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/introduce" element={<Introduce />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

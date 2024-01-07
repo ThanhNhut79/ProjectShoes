@@ -51,10 +51,20 @@
 .d_flex_center button {
   color: #35c0c5;
 }
-.d_flex_center input {
-  border: 0px;
+.form-search {
+  display: flex;
+  position: relative;
 }
-
+.form-search .btn-search1 {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  right: 0px;
+  background: transparent;
+}
+.form-search .btn-search1 i::before {
+  margin-left: 5px;
+}
 .login_header {
   padding: 0 20px;
   border-left: 1px solid #ebebeb;

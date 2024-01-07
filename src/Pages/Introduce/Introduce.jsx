@@ -98,7 +98,6 @@ const Introduce = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
