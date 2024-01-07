@@ -1,0 +1,20 @@
+.introduce {
+  color: black;
+  .content-page strong {
+    font-weight: 700;
+    font-size: 14px;
+    color: #363636;
+    line-height: 1.7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .content-page p {
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .title-head a {
+    text-decoration: none;
+    color: black;
+    line-height: 1.4;
+  }
+}

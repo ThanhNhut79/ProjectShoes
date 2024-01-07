@@ -1,0 +1,14 @@
+.left_filter .ant-menu-submenu-title:hover {
+  background: transparent !important;
+}
+
+.left_filter .ant-menu-submenu-title:active {
+  background: none !important;
+}
+
+.left_filter .ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+  background: none !important;
+}
+.left_filter .ant-menu-light.ant-menu-root.ant-menu-inline {
+  border-inline-end: none !important;
+}
