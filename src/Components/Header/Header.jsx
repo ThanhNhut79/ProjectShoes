@@ -111,9 +111,9 @@ const Header = () => {
           data-bs-theme="dark"
         >
           <div className="container">
-            <a className="navbar-brand" to="#">
+            <Link className="navbar-brand" to="/">
               TRANG CHỦ
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
