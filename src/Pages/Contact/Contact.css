@@ -1,0 +1,36 @@
+.contact {
+  margin-bottom: 30px;
+  em {
+    color: red;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .bread-crumb {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+}
+.info-contact {
+  margin-top: 35px;
+}
+.content-contact {
+  display: flex;
+  font-size: 13px;
+  margin-bottom: 10px;
+  width: 100%;
+  float: left;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .icon {
+    height: 15px;
+    width: 15px;
+    color: #35c0c5;
+    margin-right: 10px;
+  }
+}
+.btn-contact {
+  min-width: 80px;
+}
