@@ -79,7 +79,7 @@ const Header = () => {
                         <input
                           type="text"
                           name="text"
-                          placeholder="search users..."
+                          placeholder="Tìm kiếm..."
                           value={text}
                           onChange={onChange}
                           className="bg-white p-2 w-3/4 "
@@ -175,7 +175,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="lienhe">
+                  <Link className="nav-link" to="/contact">
                     LIÊN HỆ
                   </Link>
                 </li>
