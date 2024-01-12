@@ -1,0 +1,235 @@
+.detail {
+  margin-bottom: 30px;
+  .bread-crumb {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+  .img-item {
+    height: 500px;
+    width: 100%;
+  }
+  .list-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .thumb-item:hover {
+    border: 1px solid #35c0c5;
+  }
+  .title-product {
+    color: #464646;
+    line-height: 34px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px 0 10px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .details-pro .group-status {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d7d7d7;
+  }
+  .price-box {
+    margin: 0px 0 15px;
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+  .product-price {
+    font-size: 26px;
+    color: #35c0c5;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+  }
+  .product-summary {
+    padding: 15px 0;
+    width: 100%;
+    float: left;
+  }
+  .rte {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #464646;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  em {
+    font-style: italic;
+  }
+  .a_name {
+    font-weight: 700;
+  }
+  .form-group .form-control {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #363636;
+    background-color: #fff;
+    background-image: none;
+    margin-bottom: 15px;
+    border: 1px solid #eaebf3;
+    box-shadow: none;
+    border-radius: 3px;
+  }
+  .form-product .form-group {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 8px;
+    border: 0;
+  }
+  .form_product_content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 15px;
+  }
+  .form_product_content .soluong {
+    float: left;
+    margin-right: 15px;
+  }
+  .details-pro .custom-btn-number {
+    width: 80px;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0px !important;
+    border: none;
+    box-shadow: none;
+    height: 45px;
+    min-height: unset;
+  }
+  .form-group .input_number_product .num_1 {
+    bottom: 0;
+    right: 0;
+  }
+  .details-pro .form_product_content .soluong label {
+    margin: 0;
+    line-height: 40px;
+    float: left;
+    width: 80px;
+  }
+  .form-group .input_number_product .btn_num {
+    font-size: 11px;
+    line-height: 0px;
+    border: solid 1px #ebebeb;
+    display: inline-block;
+    width: 25px;
+    height: 23px;
+    background: #fff;
+    float: left;
+    color: #999;
+    text-align: center;
+    padding: 0px;
+    position: absolute;
+    padding-right: 0px;
+    line-height: 25px;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+  }
+  .form-group .input_number_product input {
+    display: block;
+    float: left;
+    color: #363636;
+    height: 45px;
+    border: 1px solid #ebebeb;
+    width: 80px;
+    text-align: center;
+    box-shadow: none;
+    padding: 5px 23px 5px 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: unset;
+    border-radius: 0;
+    margin: 0;
+    background: #fff;
+  }
+  .form-group .input_number_product .num_2 {
+    top: 0;
+    right: 0;
+  }
+  .button_actions {
+    display: inline-block;
+    float: left;
+    position: relative;
+  }
+  .button_actions .btn_add_cart {
+    position: relative;
+  }
+  .button_actions .btn_base {
+    height: 45px;
+    line-height: 40px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-weight: 400;
+    margin-right: 15px;
+    text-decoration: none;
+    padding: 0 25px;
+    background: #35c0c5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 0px;
+    border: solid 1px #35c0c5;
+  }
+  .button_actions .btn_base:hover {
+    color: #35c0c5;
+    background: #fff;
+    cursor: pointer;
+    border-color: #35c0c5;
+  }
+  .details-pro .call-phone {
+    margin-left: 15px;
+    float: left;
+    display: inline-block;
+    line-height: 45px;
+  }
+  .details-pro .call-phone a {
+    color: #35c0c5;
+    font-weight: 700;
+  }
+  .tag-product a {
+    color: #363636;
+    text-decoration: none;
+    background: transparent;
+  }
+  .tag-product a:hover {
+    color: #35c0c5;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .description {
+    margin-top: 20px;
+    .nav-item button {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #363636 !important;
+    }
+    .nav-link.active {
+      color: #35c0c5 !important;
+      border-radius: 0px;
+      border-top: 2px solid #35c0c5;
+    }
+  }
+}
