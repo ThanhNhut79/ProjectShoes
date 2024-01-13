@@ -1,14 +1,85 @@
-.left_filter .ant-menu-submenu-title:hover {
-  background: transparent !important;
+.title-shop h2 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.content-contact {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  background-color: #9bd2d499;
+  padding: 15px;
+  margin: 30px 0px;
+}
+.contact-left {
+  width: 30%;
+  float: left;
+  text-align: center;
+}
+.contact-right {
+  width: 70%;
+  float: left;
+  padding-left: 20px;
+}
+.contact-right a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #363636;
+  font-family: "Roboto", sans-serif;
+  line-height: 20px;
+  float: left;
+  margin-bottom: 0px;
 }
 
-.left_filter .ant-menu-submenu-title:active {
-  background: none !important;
+.contact-right span {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  color: #363636;
+  float: left;
 }
-
-.left_filter .ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline {
-  background: none !important;
+.left_filter.feedback {
+  width: 100%;
 }
-.left_filter .ant-menu-light.ant-menu-root.ant-menu-inline {
-  border-inline-end: none !important;
+.carousel-feed {
+}
+.items-carousel h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 550;
+}
+.items-carousel p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  color: black;
+  font-weight: 400;
+  text-align: center;
+}
+.items-carousel .avatar-user {
+  width: 40%;
+  height: 40%;
+}
+.ava-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+}
+.feedback h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0;
+  padding: 100px 0 12px 0;
+  margin-top: 50px;
+}
+.items-carousel {
+  background-color: #9bd2d499;
+  height: 385px;
 }

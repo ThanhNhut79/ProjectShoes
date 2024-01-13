@@ -46,12 +46,3 @@
 .item-product {
   padding: 10px;
 }
-.banner-product {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  margin-bottom: 40px;
-}
-.banner-product img {
-  width: 50%;
-}

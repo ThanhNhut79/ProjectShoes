@@ -41,6 +41,7 @@ const Register = () => {
       users.push({ fullName, email, username, password });
       localStorage.setItem("users", JSON.stringify(users));
       alert("Đăng ký thành công!");
+      window.location.href = "/login";
     }
     setFullName("");
     setEmail("");

@@ -23,6 +23,7 @@ const Login = () => {
 
     if (user) {
       alert("Đăng nhập thành công!");
+      window.location.href = "/";
     } else {
       alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
     }
