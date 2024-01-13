@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Detail.css";
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Radio } from "antd";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
+  const [prodDetail, setProdDetail] = useState({});
+  console.log("prodDetail", prodDetail);
+  const params = useParams();
+  const getProductById = async () => {
+    const res = await axios({
+      url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${params.id}`,
+      method: "GET",
+    });
+    setProdDetail(res.data.content);
+  };
+  useEffect(() => {
+    getProductById();
+  }, [params.id]);
   return (
     <div className="detail">
       <div className="container">
@@ -26,33 +41,13 @@ const Detail = () => {
           </div>
           <div className="col-5">
             <div className="img-product">
-              <img
-                className="img-item"
-                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/091/133/products/zal1.jpg?v=1466482812400"
-                alt=""
-              />
-            </div>
-            <div className="list-thumb">
-              <div className="thumb-item">
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/small/100/091/133/products/zal1.jpg?v=1466482812400"
-                  alt=""
-                />
-              </div>
-              <div className="thumb-item">
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/small/100/091/133/products/2560102001-2-1-1.jpg?v=1466482812400"
-                  alt=""
-                />
-              </div>
+              <img src={prodDetail.image} alt="..." height={300} />
             </div>
           </div>
           <div className="col-7">
             <div>
               <div className="details-pro">
-                <h1 className="title-product">
-                  Giày Converse Star Collar Break
-                </h1>
+                <h3>{prodDetail.name}</h3>
                 <div className="group-status">
                   <span className="first_status">
                     <span className="a_name">Thương hiệu:</span>{" "}
@@ -60,10 +55,10 @@ const Detail = () => {
                     <span className="border-xs">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                   </span>
                   <span className="first_status status_2">
-                    <span className="a_name">Tình trạng:</span>
+                    <span className="a_name">Tình trạng: </span>
                     <span className="status_name availabel">
                       <link itemProp="availability" href="" />
-                      Còn hàng
+                      Còn lại {prodDetail.quantity} sản phẩm.
                     </span>
                   </span>
                 </div>
@@ -75,29 +70,14 @@ const Detail = () => {
                 >
                   <div className="price-box">
                     <span className="special-price">
-                      <span className="price product-price">450.000₫</span>
-                      <meta itemProp="price" content={450000} />
-                      <meta itemProp="priceCurrency" content="VND" />
+                      <span className="price product-price">
+                        {prodDetail.price}$
+                      </span>
                     </span>{" "}
-                    {/* Giá Khuyến mại */}
-                    <span
-                      className="old-price"
-                      itemProp="priceSpecification"
-                      itemScope
-                      itemType="https://schema.org/priceSpecification"
-                    >
-                      <del className="price product-price-old sale">
-                        500.000₫
-                      </del>
-                      <meta itemProp="price" content={500000} />
-                      <meta itemProp="priceCurrency" content="VND" />
-                    </span>{" "}
-                    {/* Giá gốc */}
                   </div>
                   <div className="product-summary">
-                    <div className="rte">
-                      <em>Mô tả đang cập nhật</em>
-                    </div>
+                    <p>{prodDetail.description}</p>
+                    <p>{prodDetail.shortDescription}</p>
                   </div>
                 </div>
                 <div className="form-product col-sm-12 col-lg-12 col-md-12 col-xs-12">
@@ -115,7 +95,7 @@ const Detail = () => {
                         <div className="custom input_number_product custom-btn-number form-control">
                           <button
                             className="btn_num num_1 button button_qty"
-                            onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) && qtypro > 1 ) result.value--;return false;"
+                            // onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) && qtypro > 1 ) result.value--;return false;"
                             type="button"
                           >
                             <i className="fa fa-minus" />
@@ -127,12 +107,12 @@ const Detail = () => {
                             defaultValue={1}
                             maxLength={3}
                             className="form-control prd_quantity "
-                            onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
-                            onchange="if(this.value == 0)this.value=1;"
+                            // onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
+                            // onchange="if(this.value == 0)this.value=1;"
                           />
                           <button
                             className="btn_num num_2 button button_qty"
-                            onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;"
+                            // onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;"
                             type="button"
                           >
                             <i className="fa fa-plus" />
@@ -157,13 +137,16 @@ const Detail = () => {
                     </div>
                   </div>
                   <div className="tag-product">
-                    <span className="inline">Tags:</span>
-                    <a href="/search?query=converse" title="converse">
-                      converse{" "}
-                    </a>
-                    <a href="/search?query=Giày%20vải" title="Giày vải">
-                      Giày vải{" "}
-                    </a>
+                    <span className="inline">Chọn size: </span>
+                    <Radio.Group defaultValue={1}>
+                      <Radio value={1}>36</Radio>
+                      <Radio value={2}>37</Radio>
+                      <Radio value={3}>38</Radio>
+                      <Radio value={4}>39</Radio>
+                      <Radio value={5}>40</Radio>
+                      <Radio value={6}>41</Radio>
+                      <Radio value={7}>42</Radio>
+                    </Radio.Group>
                   </div>
                 </div>
               </div>
@@ -226,10 +209,9 @@ const Detail = () => {
               >
                 <div>
                   <p style={{ textAlign: "justify" }}>
-                    Giày thể thao&nbsp;nam đẹp da màu nâu cao cấp, thanh lịch từ
-                    thương hiệu Converse®
+                    Giày thể thao&nbsp;nam đẹp da màu nâu cao cấp
                     <br />
-                    Chất liệu giày bằng da bò mềm với chi tiết mũi giày cap-toe
+                    Chất liệu giày bằng da mềm với chi tiết mũi giày cap-toe
                     <br />
                     Mắt xỏ dây âm với dây cột nylon
                     <br />
@@ -241,13 +223,8 @@ const Detail = () => {
                     mặt.
                   </p>
                   <p style={{ textAlign: "justify" }}>
-                    Được thành lập vào năm 1978, thương hiệu Nine West xuất phát
-                    từ địa chỉ ở thành phố New York. Trong 30 năm, Nine West đã
-                    phát triển và trở thành người đứng đầu trong lĩnh vực thời
-                    trang nổi tiếng thế giới. Ngày nay, giầy - túi xách - trang
-                    sức Nine West được yêu mến bởi phụ nữ trên toàn thế giới và
-                    được xem như một chuyên gia tư vấn đáng tin cậy trong mọi
-                    lĩnh vực thời trang, bao gồm cả thời trang trẻ em.
+                    Được thành lập vào năm 2016, Cửa hàng Breashka Shoes chúng
+                    tôi tự hào mang đến những sản phẩm chất lượng.
                   </p>
                 </div>
               </div>
