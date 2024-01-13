@@ -7,6 +7,8 @@ import Register from "./Pages/Register/Register";
 import Layout from "./Layout/Index";
 import Contact from "./Pages/Contact/Contact";
 import Detail from "./Pages/Detail/Detail";
+import News from "./Pages/News/News";
+import Product from "./Pages/Product/Product";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/introduce" element={<Introduce />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/product" element={<Product />} />
         </Route>
         <Route>
           <Route path="/login" element={<Login />} />

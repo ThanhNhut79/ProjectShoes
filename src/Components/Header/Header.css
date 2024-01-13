@@ -81,9 +81,9 @@
   width: 100%;
   z-index: 100;
   .level0 {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     .level1.item:before {
       position: absolute;
       content: "";

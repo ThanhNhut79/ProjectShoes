@@ -168,7 +168,7 @@ const Header = () => {
                   </ul> */}
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="tintuc">
+                  <Link className="nav-link" to="/news">
                     TIN TỨC
                   </Link>
                 </li>
@@ -196,201 +196,38 @@ const Header = () => {
                     <ul className="level0">
                       <li className="level1 parent item">
                         <h2 className="h4">
-                          <a href="/ssandal" title="Sandal">
-                            Sandal
-                          </a>
+                          <Link className="nav-link" to="/product">
+                            Tất cả sản phẩm
+                          </Link>
                         </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a href="/ssandal" title="Sandal xỏ ngón">
-                              <span>Sandal xỏ ngón</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/ssandal" title="Sandal thường">
-                              <span>Sandal thường</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Sandal Mỹ">
-                              <span>Sandal Mỹ</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Sandal Việt Nam">
-                              <span>Sandal Việt Nam</span>
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="level1 parent item">
                         <h2 className="h4">
-                          <a href="/giay-tay" title="Giày tây">
-                            Giày tây
+                          <a href="/giay-tay" title="Giày Adidas">
+                            Giày Adidas
                           </a>
                         </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày tây cao cấp">
-                              <span>Giày tây cao cấp</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày tây nhập khẩu"
-                            >
-                              <span>Giày tây nhập khẩu</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày tây Trung Quốc"
-                            >
-                              <span>Giày tây Trung Quốc</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày tây 2017">
-                              <span>Giày tây 2017</span>
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="level1 parent item">
                         <h2 className="h4">
-                          <a href="/giay-casual" title="Giày Casual">
-                            Giày Casual
+                          <a href="/giay-casual" title="Giày nike">
+                            Giày Nike
                           </a>
                         </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giay casual mẫu mới"
-                            >
-                              <span>Giay casual mẫu mới</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giay casual đặc biệt"
-                            >
-                              <span>Giay casual đặc biệt</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giay casual 2017">
-                              <span>Giay casual 2017</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giay casual hot">
-                              <span>Giay casual hot</span>
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="level1 parent item">
                         <h2 className="h4">
                           <a href="/giay-luoi" title="Giày lười">
-                            Giày lười
+                            Giày Vans
                           </a>
                         </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày lười cao cấp"
-                            >
-                              <span>Giày lười cao cấp</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày lười nhập khẩu"
-                            >
-                              <span>Giày lười nhập khẩu</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày lười China">
-                              <span>Giày lười China</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày lười 2017">
-                              <span>Giày lười 2017</span>
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="level1 parent item">
                         <h2 className="h4">
-                          <a href="/giay-co-cao" title="Giày cao cổ">
-                            Giày cao cổ
+                          <a href="/giay-Converse" title="Giày Converse">
+                            Giày Converse
                           </a>
                         </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày cao cổ nam">
-                              <span>Giày cao cổ nam</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày cao cổ nữ">
-                              <span>Giày cao cổ nữ</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày cao cổ cao cấp"
-                            >
-                              <span>Giày cao cổ cao cấp</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày cao cổ 2017">
-                              <span>Giày cao cổ 2017</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="level1 parent item">
-                        <h2 className="h4">
-                          <a href="/giay-di-choi" title="Giày đi chơi">
-                            Giày đi chơi
-                          </a>
-                        </h2>
-                        <ul className="level1">
-                          <li className="level2">
-                            <a
-                              href="/collections/all"
-                              title="Giày đi chơi giá rẻ"
-                            >
-                              <span>Giày đi chơi giá rẻ</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày đá bóng">
-                              <span>Giày đá bóng</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày bóng bàn">
-                              <span>Giày bóng bàn</span>
-                            </a>
-                          </li>
-                          <li className="level2">
-                            <a href="/collections/all" title="Giày thể thao">
-                              <span>Giày thể thao</span>
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                     </ul>
                   </div>

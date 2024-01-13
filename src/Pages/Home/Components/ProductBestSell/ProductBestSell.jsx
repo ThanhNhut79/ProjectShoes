@@ -11,7 +11,7 @@ const ProductBestSell = () => {
       url: "https://shop.cyberlearn.vn/api/Product?limit=6",
       method: "GET",
     });
-    setArrProduct(res.data.content.slice(6, 14));
+    setArrProduct(res.data.content.slice(10, 14));
   };
   useEffect(() => {
     getAllProductApi();
