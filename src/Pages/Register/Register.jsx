@@ -1,104 +1,99 @@
 import React, { useState } from "react";
 import "./Register.css";
 const Register = () => {
-  const [fullName, setFullName] = useState("");
+  // const history = useHistory();
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [address, setAddress] = useState("");
 
-  const handleFullNameChange = (event) => {
-    setFullName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-  };
-
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find((u) => u.username === username);
-    if (password !== confirmPassword) {
-      alert("Mật khẩu và xác nhận mật khẩu không khớp. Vui lòng nhập lại !");
-      return;
-    }
 
-    if (user) {
-      alert("Username đã tồn tại. Vui lòng chọn username khác.");
-      return;
-    } else {
-      users.push({ fullName, email, username, password });
-      localStorage.setItem("users", JSON.stringify(users));
-      alert("Đăng ký thành công!");
-      window.location.href = "/login";
+    try {
+      // Gửi yêu cầu đăng ký đến API và nhận phản hồi
+      const response = await fetch(
+        "https://ecommerce-shopping-api.onrender.com/api/user/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password, fullname, mobile, address }),
+        }
+      );
+
+      if (response.ok) {
+        // Đăng ký thành công
+        const data = await response.json();
+        // Lưu thông tin đăng nhập vào localStorage
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", email);
+        // Chuyển hướng đến trang chủ
+        // history.push("/home");
+      } else {
+        // Xử lý lỗi khi đăng ký không thành công
+        throw new Error("Đăng ký không thành công");
+      }
+    } catch (error) {
+      console.error("Lỗi khi đăng ký:", error.message);
+      console.error("Mã lỗi:", error.response.status);
+      console.error("Thông báo lỗi:", error.response.data);
+      // Xử lý lỗi
     }
-    setFullName("");
-    setEmail("");
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
   };
   return (
     <div className="register-container ">
       <form className="registration-form" onSubmit={handleRegister}>
-        <div></div>
         <h2>Đăng ký</h2>
-        <div className="form-group">
-          <label htmlFor="fullName">Họ tên:</label>
-          <input
-            type="text"
-            id="fullName"
-            value={fullName}
-            onChange={handleFullNameChange}
-            required
-          />
-        </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
             value={email}
-            onChange={handleEmailChange}
+            onChange={(event) => setEmail(event.target.value)}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Mật khẩu:</label>
           <input
             type="password"
             id="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="fullname">Họ và tên:</label>
           <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
+            type="text"
+            id="fullname"
+            value={fullname}
+            onChange={(event) => setFullname(event.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="mobile">Số điện thoại:</label>
+          <input
+            type="tel"
+            id="mobile"
+            value={mobile}
+            onChange={(event) => setMobile(event.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="address">Địa chỉ:</label>
+          <input
+            type="text"
+            id="address"
+            value={address}
+            onChange={(event) => setAddress(event.target.value)}
             required
           />
         </div>

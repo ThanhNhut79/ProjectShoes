@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React from "react";
 import { NavLink } from "react-router-dom";
 const ProductList = ({ arrProduct, handleAddToCart }) => (
@@ -13,7 +14,15 @@ const ProductList = ({ arrProduct, handleAddToCart }) => (
           </div>
           <div className="cost">${prod.price}</div>
           <div className="cart">
-            <button onClick={() => handleAddToCart(prod)}>Add to Cart</button>
+            <NavLink to={`/detail/${prod.id}`}>
+              <Button className="view-detail">Xem Sản Phẩm</Button>
+            </NavLink>
+            <Button
+              className="btn-add-cart"
+              onClick={() => handleAddToCart(prod)}
+            >
+              Thêm giỏ hàng
+            </Button>
           </div>
         </div>
       ))}

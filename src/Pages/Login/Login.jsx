@@ -2,44 +2,51 @@ import React, { useState } from "react";
 import "./Login.css";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(
-      (u) => u.username === username && u.password === password
-    );
+    try {
+      const response = await fetch(
+        "https://ecommerce-shopping-api.onrender.com/api/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
-    if (user) {
-      alert("Đăng nhập thành công!");
-      window.location.href = "/";
-    } else {
-      alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+      if (response.ok) {
+        // Đăng nhập thành công
+        const data = await response.json();
+        // Lưu thông tin đăng nhập vào localStorage
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", email);
+        // Chuyển hướng đến trang chủ
+        window.location.href = "/";
+      } else {
+        throw new Error("Đăng nhập không thành công");
+      }
+    } catch (error) {
+      console.error("Lỗi khi đăng nhập:", error.message);
     }
   };
+
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
         <h2 className="login-title">Đăng nhập</h2>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Username:</label>
           <input
             type="text"
-            id="username"
+            id="email"
             className="form-input"
-            value={username}
-            onChange={handleUsernameChange}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
         </div>
         <div className="form-group">
@@ -49,7 +56,7 @@ const Login = () => {
             id="password"
             className="form-input"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(event) => setPassword(event.target.value)}
           />
         </div>
         <button type="submit" className="form-button">
