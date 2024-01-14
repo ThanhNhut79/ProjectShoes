@@ -109,3 +109,29 @@ img {
   color: #ffffff;
   font-weight: 500px;
 }
+.search-product {
+  display: flex;
+  width: 35%;
+  height: 50px;
+  position: relative;
+}
+.search-product button {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 40px;
+  border: none;
+  background-color: #72f17c;
+}
+.filter-productpage {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.filter-price {
+  display: inline-block;
+  width: 35%;
+}
+.filter-price input {
+  width: 100%;
+}
