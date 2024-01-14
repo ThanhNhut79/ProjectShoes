@@ -31,6 +31,15 @@
   .cartgroup {
     padding: 0 20px;
     border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    background: url("//bizweb.dktcdn.net/100/091/133/themes/880367/assets/bg-cart.png?1665385034327")
+      #35c0c5;
+    a {
+      color: black;
+    }
+    i {
+      color: black;
+    }
   }
 
   a {
@@ -69,9 +78,33 @@
   padding: 0 20px;
   border-left: 1px solid #ebebeb;
 }
+.login_header:hover {
+  padding: 0 20px;
+  border-left: 1px solid #ebebeb;
+  background: url("//bizweb.dktcdn.net/100/091/133/themes/880367/assets/bg-cart.png?1665385034327")
+    #35c0c5;
+  a {
+    color: white;
+  }
+  i {
+    color: white;
+  }
+}
 .register_header {
   padding: 0 20px;
   border-left: 1px solid #ebebeb;
+}
+.register_header:hover {
+  padding: 0 20px;
+  border-left: 1px solid #ebebeb;
+  background: url("//bizweb.dktcdn.net/100/091/133/themes/880367/assets/bg-cart.png?1665385034327")
+    #35c0c5;
+  a {
+    color: white;
+  }
+  i {
+    color: white;
+  }
 }
 .dropdown_show {
   padding: 30px;
