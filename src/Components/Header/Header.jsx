@@ -138,18 +138,16 @@ const Header = () => {
                     GIỚI THIỆU
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    to="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    onClick={handleShowDropdown}
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/product"
                   >
                     SẢN PHẨM
-                  </a>
-                  {/* <ul className="dropdown-menu">
+                  </Link>
+                </li>
+                {/* <ul className="dropdown-menu">
                     <li>
                       <a className="dropdown-item" href="#">
                         Action
@@ -166,7 +164,6 @@ const Header = () => {
                       </a>
                     </li>
                   </ul> */}
-                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/news">
                     TIN TỨC
