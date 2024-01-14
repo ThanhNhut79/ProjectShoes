@@ -36,7 +36,7 @@ const Home = () => {
                 {arrProduct.map((prod) => {
                   return (
                     <div className="col-4 item-product" key={prod.id}>
-                      <NavLink
+                      <div
                         style={{ textDecoration: "none" }}
                         to={`/detail/${prod.id}`}
                         className="card"
@@ -47,14 +47,20 @@ const Home = () => {
                           <p>Giá :{prod.price} $</p>
                           <p> Còn lại: {prod.quantity} sản phẩm</p>
                           <div className="button-control">
-                            <NavLink to={`/detail/${prod.id}`}>
-                              <Button>Xem Sản Phẩm</Button>
-                            </NavLink>
+                            <div>
+                              <NavLink to={`/detail/${prod.id}`}>
+                                <Button>Xem Sản Phẩm</Button>
+                              </NavLink>
+                            </div>
 
-                            <Button>Them gio hang</Button>
+                            <div>
+                              <Button onClick={() => handleAddToCart(prod)}>
+                                Them gio hang
+                              </Button>
+                            </div>
                           </div>
                         </div>
-                      </NavLink>
+                      </div>
                     </div>
                   );
                 })}
