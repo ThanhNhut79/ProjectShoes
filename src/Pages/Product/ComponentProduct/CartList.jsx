@@ -10,11 +10,12 @@ const CartList = ({
   calculateTotalCost,
 }) => (
   <div>
-    <div>
+    <div className="total">
       <ul className="cart-list">
         {cart.map((item) => (
           <li key={item.id}>
-            {item.name} - {item.price} - Quantity: {item.quantity} - Total: $
+            Tên Sản Phẩm: <span>{item.name}</span> - Giá :
+            <span>{item.price}</span> - Số Lượng: {item.quantity} - Tổng: $
             {item.price * item.quantity}
             <button onClick={() => handleIncrementQuantity(item.id)}>
               <IoMdAdd />

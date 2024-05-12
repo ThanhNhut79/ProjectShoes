@@ -109,29 +109,29 @@ img {
   color: #ffffff;
   font-weight: 500px;
 }
-.search-product {
+.filter-container {
   display: flex;
-  width: 35%;
-  height: 50px;
-  position: relative;
+  margin-bottom: 20px;
 }
-.search-product button {
-  position: absolute;
-  right: 0px;
-  height: 100%;
-  width: 40px;
+.filter-container input[type="text"] {
+  width: 700px;
+  border: 1px solid #000000;
+  margin-right: 20px;
+}
+.filter-container button {
   border: none;
-  background-color: #72f17c;
+  background-color: #ffffff;
 }
-.filter-productpage {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.filter-container input {
+  margin: 0 10px;
+  border-radius: 5px;
 }
-.filter-price {
-  display: inline-block;
-  width: 35%;
+.cart-container {
+  width: 1200px;
+  height: auto;
+  background-color: antiquewhite;
+  color: #000000;
 }
-.filter-price input {
-  width: 100%;
+.cart-container .cart-icon {
+  float: right;
 }
